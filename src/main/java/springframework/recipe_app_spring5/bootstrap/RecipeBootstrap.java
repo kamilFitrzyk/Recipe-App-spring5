@@ -204,6 +204,12 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacosRecipe.getCategories().add(mexicanCategory);
 
         recipes.add(tacosRecipe);
+
+        Category category = new Category();
+        category.setId(4L);
+
+        System.out.println(category.getId() + "@@@@@@@@@@");
+
         return recipes;
     }
 }

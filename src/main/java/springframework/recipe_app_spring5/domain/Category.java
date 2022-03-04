@@ -11,6 +11,18 @@ import java.util.Set;
 public class Category {
 
 
+    public Category(Long id, String description, Set<Recipe> recipes) {
+        this.id = id;
+        this.description = description;
+        this.recipes = recipes;
+    }
+
+    public Category(Set<Recipe> recipes) {
+        this.recipes = recipes;
+    }
+
+    public Category() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

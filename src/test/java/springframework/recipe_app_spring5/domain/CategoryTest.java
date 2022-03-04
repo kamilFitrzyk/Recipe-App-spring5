@@ -1,6 +1,7 @@
 package springframework.recipe_app_spring5.domain;
 
 import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -12,7 +13,7 @@ class CategoryTest {
 
     Category category;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         category = new Category();
     }
