@@ -19,7 +19,6 @@ public class IndexController {
     }
 
 
-
     @RequestMapping({"","/","/index"})
     public String getIndexPage(Model model){
 
