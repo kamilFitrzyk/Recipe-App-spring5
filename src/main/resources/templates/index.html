@@ -24,6 +24,7 @@
                     <h1 class="panel-title">My recipe</h1>
                 </div>
                 <div class="panel-body">
+                    <!--/* @thymesVar id="recipe" type="springframework.recipe_app_spring5.domain.Recipe"*/-->
                     <div class="table-responsive" th:if="${not #lists.isEmpty(recipes)}">
                         <table class="table table-hover">
                             <thead class="thead-inverse">
