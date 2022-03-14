@@ -23,6 +23,7 @@ class RecipeControllerTest {
     @Mock
     RecipeService recipeService;
 
+    //@Mock
     RecipeController controller;
 
     @BeforeEach
@@ -35,6 +36,7 @@ class RecipeControllerTest {
     @Test
     public void testGetRecipe() throws Exception {
 
+        
         Recipe recipe = new Recipe();
         recipe.setId(1L);
 
