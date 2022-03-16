@@ -36,7 +36,7 @@ class RecipeServiceImplTest {
     }
 
     @Test
-    void getRecipes() {
+    void getRecipes() throws Exception{
 
         Recipe recipe = new Recipe();
         HashSet recipesData = new HashSet();
@@ -48,5 +48,14 @@ class RecipeServiceImplTest {
 
         assertEquals(recipesData.size(),1);
         Mockito.verify(recipeRepository, Mockito.times(1)).findAll();
+        Mockito.verify(recipeRepository, Mockito.never()).findById(Mockito.anyLong());
+    }
+
+    @Test
+    void testDeleteById() throws Exception {
+        Long idToDelete = Long.valueOf(2L);
+        recipeService.deleteById(idToDelete);
+
+        Mockito.verify(recipeRepository, Mockito.times(1)).deleteById(Mockito.anyLong());
     }
 }
