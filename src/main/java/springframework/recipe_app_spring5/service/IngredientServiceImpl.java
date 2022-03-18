@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import springframework.recipe_app_spring5.commands.IngredientCommand;
 import springframework.recipe_app_spring5.converters.IngredientToIngredientCommand;
+import springframework.recipe_app_spring5.domain.Ingredient;
 import springframework.recipe_app_spring5.domain.Recipe;
 import springframework.recipe_app_spring5.repository.RecipeRepository;
 
@@ -44,5 +45,10 @@ public class IngredientServiceImpl implements IngredientService {
         }
 
         return ingredientCommandOptional.get();
+    }
+
+    @Override
+    public IngredientCommand saveIngredientCommand(IngredientCommand command) {
+        return null;
     }
 }
