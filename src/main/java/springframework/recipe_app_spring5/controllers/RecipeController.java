@@ -26,6 +26,7 @@ public class RecipeController {
 
         return "recipe/show";
     }
+
     @GetMapping
     @RequestMapping({"/recipe/new"})
     public String newRecipe(Model model){

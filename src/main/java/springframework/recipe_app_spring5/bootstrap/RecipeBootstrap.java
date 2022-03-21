@@ -213,8 +213,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         Category category = new Category();
         category.setId(4L);
 
-        System.out.println(category.getId() + "@@@@@@@@@@");
-
         return recipes;
     }
 }
