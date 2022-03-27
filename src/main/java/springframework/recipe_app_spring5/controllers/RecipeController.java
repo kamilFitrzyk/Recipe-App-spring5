@@ -1,6 +1,7 @@
 package springframework.recipe_app_spring5.controllers;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.quartz.QuartzTransactionManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -60,8 +61,6 @@ public class RecipeController {
         recipeService.deleteById(Long.valueOf(id));
 
         return "redirect:/";
-
-
     }
 
 }
