@@ -73,7 +73,6 @@ public class IngredientController {
         RecipeCommand recipeCommand = recipeService.findCommandById(Long.valueOf(recipeId));
         // todo raise exception if null
 
-
         IngredientCommand ingredientCommand = new IngredientCommand();
         ingredientCommand.setRecipeId(Long.valueOf(recipeId));
         model.addAttribute("ingredient", ingredientCommand);
@@ -92,6 +91,4 @@ public class IngredientController {
 
         return "redirect:/recipe/" + recipeId + "/ingredients";
     }
-
-
 }
