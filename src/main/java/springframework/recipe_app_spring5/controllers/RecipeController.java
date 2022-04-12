@@ -2,11 +2,14 @@ package springframework.recipe_app_spring5.controllers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.quartz.QuartzTransactionManager;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import springframework.recipe_app_spring5.commands.RecipeCommand;
 import springframework.recipe_app_spring5.domain.Recipe;
+import springframework.recipe_app_spring5.exceptions.NotFoundException;
 import springframework.recipe_app_spring5.service.RecipeService;
 
 @Slf4j
@@ -61,6 +64,18 @@ public class RecipeController {
         recipeService.deleteById(Long.valueOf(id));
 
         return "redirect:/";
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(NotFoundException.class)
+    public ModelAndView handleNotFound() {
+
+        log.error("Handling not found");
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("404error");
+
+        return modelAndView;
     }
 
 }
